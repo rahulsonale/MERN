@@ -159,18 +159,26 @@ console.log(result);
 /* NEXT CLASS -> precedence and associativity */
 
 /* Some more arithmetic operators */
-let r = 5;
-r = r + 5; // RHS is calculated first, then it is assigned to LHS
-r += 5;
-console.log(r);
+// let r = 5;
+// r = r + 5; // RHS is calculated first, then it is assigned to LHS
+// r += 5;
+// console.log(r);
 
-r *= 5;
-console.log(r);
+// r *= 5;
+// console.log(r);
 
-r = "34";
-r += 26;
-r *= 2;
-console.log(r);
+// r = "34";
+// r += 26;
+// r *= 2;
+// console.log(r);
 
-console.log(er);
-let er = 23;
+// console.log(er);
+// let er = 23;
+
+for (let i = 1; i <= 10; i++) {
+  let row = "";
+  for (j = i; j <= 1; j--) {
+    row += j;
+  }
+  console.log(row);
+}

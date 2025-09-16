@@ -163,11 +163,103 @@
 //   }
 // }
 
-let a = 75;
-let b = 90;
-while (b !== 0) {
-  let t = b;
-  b = a % b;
-  a = t;
-}
-console.log(a);
+// let a = 75;
+// let b = 90;
+// while (b !== 0) {
+//   let t = b;
+//   b = a % b;
+//   a = t;
+// }
+// console.log(a);
+
+// let star;
+// let n = 4;
+// for (let i = 1; i <= n; i++) {
+//   star += "#";
+// }
+// console.log(star);
+
+// for (let i = 1; i <= 10; i++) {
+//   let row = "";
+//   for (j = i; j >= 1; j--) {
+//     row += j;
+//   }
+//   console.log(row);
+// }
+
+// let n = 4;
+// for (let i = 1; i <= n; i++) {
+//   let hash = "";
+//   for (let j = i; j >= 1; j--) {
+//     hash += "#";
+//   }
+//   console.log(hash);
+// }
+
+// let n = 2;
+// for (let i = 1; i <= n; i++) {
+//   let row = "";
+
+//   // spaces first
+//   for (let s = 1; s <= n - i; s++) {
+//     row += "     ";
+//   }
+
+//   // then hashes
+//   for (let j = 1; j <= i; j++) {
+//     row += "#";
+//   }
+
+//   console.log(row);
+// }
+
+// let n = 18;
+// for (let i = 2; i <= n; i++) {
+//   if (i % 2 === 0) {
+//     continue;
+//   }
+//   console.log(i);
+// }
+
+// let n = 15;
+// let str = n.toString(); //345
+// let count = str.length;
+// let sum = 0;
+// for (let i = 0; i < str.length; i++) {
+//   let digit = Number(str[i]);
+//   sum += Math.pow(digit, count);
+// }
+
+// if (sum === n) {
+//   console.log("Armstrong Number");
+// } else {
+//   console.log("not");
+// }
+
+//fact
+// let n = 3;
+// let fact = 1;
+// for (let i = 1; i <= n; i++) {
+//   fact = fact * i;
+// }
+// console.log(fact);
+
+//Digit Frequency Counter
+// function countFreqDigit(n, d) {
+//   // write code here
+//   let str_n = n.toString();
+//   let str_d = d.toString();
+//   let count = 0;
+//   for (let i = 0; i < str_n.length; i++) {
+//     if (str_n[i] === str_d) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(countFreqDigit(321111113, 1));
+
+// function ModifyName(name) {
+//   // write code here
+//   return `${name} is a Super Hero`;
+// }
