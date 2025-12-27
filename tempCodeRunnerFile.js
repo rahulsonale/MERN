@@ -1,9 +1,7 @@
-function canvote(userage, username) {
-//   if (userage >= 18) {
-//     console.log(username + " is allowed to vote");
-//   } else {
-//     console.log(username + " is not allowed to vote");
-//   }
+//print number from N to 1
+// function printNum(n) {
+//   if (n == 0) return; //base case
+//   console.log(n);
+//   printNum(n - 1); //recursive call
 // }
-// canvote(18, "Archit");
-// canvote(12, "Pankaj");
+// printNum(4);
