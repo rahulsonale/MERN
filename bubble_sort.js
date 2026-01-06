@@ -51,3 +51,33 @@ function bubbleSort(N, arr) {
   }
   return arr;
 }
+
+//questions : Another bubble sort problem
+//Print three values in separate lines:
+//Number of swaps it took to sort the array using the above algorithm.
+//First element in the array after sorting the array.
+//Last element in the array after sorting the array.
+function bubbleSort(a, n) {
+  let count = 0;
+  for (let i = 0; i < n - 1; i++) {
+    let swapping = false;
+    for (let j = 0; j < n - i - 1; j++) {
+      if (a[j] > a[j + 1]) {
+        [a[j], a[j + 1]] = [a[j + 1], a[j]];
+        swapping = true;
+        count++;
+      }
+    }
+  }
+  console.log(count);
+  console.log(a[0]);
+  console.log(a[n - 1]);
+}
+
+//Input:
+//3
+//6 4 1
+//Output:
+//3
+//1
+//6
