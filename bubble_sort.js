@@ -81,3 +81,29 @@ function bubbleSort(a, n) {
 //3
 //1
 //6
+
+//question : Find Smallest Greater Elements
+function smallestGreaterElements(arr) {
+  let n = arr.length;
+  let finalvalue = [];
+  for (let i = 0; i < n; i++) {
+    let max = [];
+    for (let j = 0; j < n; j++) {
+      if (arr[i] < arr[j]) {
+        max.push(arr[j]);
+      }
+    }
+    if (max.length === 0) {
+      finalvalue.push(-10000000);
+    } else {
+      finalvalue.push(Math.min(...max));
+    }
+  }
+  return finalvalue;
+}
+
+//Input :
+// 4 --> length
+//13 6 17 12
+//Output
+//17 12 -10000000 13
