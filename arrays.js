@@ -94,3 +94,79 @@
 
 // arr[5] = 14;
 // console.log(arr);
+
+/*Consecutive Pair Sum 
+Input
+
+4 3
+1 2 4 3
+Output
+1
+*/
+function ArrayProblem(arr, k) {
+  let count = 0;
+  for (let i = 0; i <= arr.length - 1; i++) {
+    if (arr[i] + arr[i + 1] === k) {
+      count++;
+    }
+  }
+  return count;
+}
+
+/*Count Numbers Greater Than 35
+Input
+
+5
+12 67 89 16 23
+Output
+
+2*/
+function ArrayProblem2(n, arr) {
+  let count = 0;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] > 35) {
+      count++;
+    }
+  }
+  return count;
+}
+
+/*Array Sum, Average and Maximum
+Input
+
+6
+1 2 3 4 5 6
+Output
+21 3 6
+*/
+function arrayOperations(arr, n) {
+  let sum = 0;
+
+  for (let i = 0; i < n; i++) {
+    let add = arr[i];
+    sum += add;
+  }
+  let avg = Math.floor(sum / n);
+  let max_element = Math.max(...arr);
+  console.log(sum, avg, max_element);
+}
+
+/*Sorted Insert Position
+Input
+
+4
+1 3 5 6 
+5
+Output
+2
+*/
+function searchInsert(a, b) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === b) {
+      return i;
+    } else if (a[i] > b) {
+      return i;
+    }
+  }
+  return a.length;
+}
