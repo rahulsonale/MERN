@@ -219,3 +219,26 @@ function arrayProblem(arrA, arrB) {
     return "Second array is larger";
   }
 }
+
+/*Index of Element
+Example 1:
+
+Input
+
+5 1
+2 1 3 1 1
+Output:
+2 4 5*/
+function indexOfElement(N, X, arr) {
+  let result = [];
+  for (let i = 0; i < N; i++) {
+    if (arr[i] === X) {
+      result.push(i + 1);
+    }
+  }
+  if (result.length === 0) {
+    console.log(-1);
+  } else {
+    console.log(result.join(" "));
+  }
+}
