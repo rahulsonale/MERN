@@ -124,3 +124,29 @@ function indexAfterSort(arr, target) {
   }
   return count;
 }
+
+/*Find Most Frequent Element
+You are given an array arr of length n. Your task is to print the element which has maximum occurrences in the array. If two elements have the same occurrence then print the smaller element
+Input
+7
+9 8 1 1 2 2 3
+Output
+1*/
+function maximum_occurrence(arr, n) {
+  let map = new Map();
+  for (let i = 0; i < n; i++) {
+    map.set(arr[i], (map.get(arr[i]) || 0) + 1);
+  }
+  let maxfreq = 0;
+  let result = Infinity;
+
+  for (let [key, value] of map) {
+    if (value > maxfreq) {
+      maxfreq = value;
+      result = key;
+    } else if (value === maxfreq && key < result) {
+      result = key;
+    }
+  }
+  return result;
+}
