@@ -93,5 +93,29 @@ function numberOfDays(M) {
     return "Invalid month number";
   }
 }
-
 //-->Call the function here
+
+/*Student Grade Classification
+for marks above 90, print "Excellent".
+for marks above 80 and less than equal to 90, print "Good"
+for marks above 70 and less than equal to 80, print "Fair".
+for marks above 60 and less than equal to 70, print "Meets Expectations".
+for marks below 60, print "Below Expectations".*/
+
+function grade(marks) {
+  if (marks > 90) {
+    return "Excellent";
+  } else if (marks > 80 && marks <= 90) {
+    return "Good";
+  } else if (marks > 70 && marks <= 80) {
+    return "Fair";
+  } else if (marks > 60 && marks <= 70) {
+    return "Meets Expectations";
+  } else if (marks <= 60) {
+    return "Below Expectations";
+  } else {
+    return "None";
+  }
+}
+
+//--> call function here
