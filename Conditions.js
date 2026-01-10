@@ -34,3 +34,20 @@ function chamber(x, y) {
   }
 }
 chamber(x, y);
+
+/*Divisibility Check
+Input
+
+28
+Output
+Not divisible
+Given a number n, If the number is divisible by 6 then print Divisible else Not divisible.*/
+function divi(num) {
+  if (num % 6 === 0) {
+    return "Divisible";
+  } else {
+    return "Not divisible";
+  }
+}
+
+console.log(divi(n));
