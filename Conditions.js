@@ -51,3 +51,18 @@ function divi(num) {
 }
 
 console.log(divi(n));
+
+/*Number Importance Classification
+Input
+
+30
+Output
+more important*/
+function number(N) {
+  if (N >= 30) {
+    return "more important";
+  } else {
+    return "less important";
+  }
+}
+//console.log(number(35)); ---> Example
