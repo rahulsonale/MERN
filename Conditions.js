@@ -138,3 +138,20 @@ function isLeapYear(year) {
 }
 
 console.log(isLeapYear(year));
+
+/*Ques:Character Case Identifier --> 1, if the character is a uppercase alphabet(A to Z)
+
+0, if the character is a lowercase alphabet(a to z)
+
+-1, if the character is not an alphabet*/
+function characterCaseIdentifier(ch) {
+  if (ch >= "A" && ch <= "Z") {
+    console.log(1); // Uppercase
+  } else if (ch >= "a" && ch <= "z") {
+    console.log(0); // Lowercase
+  } else {
+    console.log(-1); // Not an alphabet
+  }
+}
+
+characterCaseIdentifier(ch);
