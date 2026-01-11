@@ -119,3 +119,22 @@ function grade(marks) {
 }
 
 //--> call function here
+
+/*Lear year: Input
+
+2004
+Output
+
+1
+Explanation
+
+2004 is divisible 4 by hence it's a leap year*/
+function isLeapYear(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+console.log(isLeapYear(year));
