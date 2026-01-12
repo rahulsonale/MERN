@@ -66,3 +66,19 @@ function SumofDigits(n) {
   }
   return total;
 }
+
+/*Check Prime*/
+function is_prime(N) {
+  if (N <= 1) {
+    return `${N} is not a prime number`; // numbers <= 1 are not prime
+  }
+
+  for (let i = 2; i <= Math.sqrt(N); i++) {
+    if (N % i === 0) {
+      return `${N} is not a prime number`; // found a divisor, not prime
+    }
+  }
+
+  return `${N} is a prime number`;
+}
+//-->Call function here
