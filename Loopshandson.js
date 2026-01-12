@@ -44,3 +44,25 @@ console.log(row);
 for (let j = 1; j <= n; j++) {
   console.log("*");
 }
+
+/*Sum of Digits
+Complete the function SumofDigits() that takes an integer N as a parameter and returns the sum of its digits.
+Input
+2
+25
+28
+
+Output
+7
+10
+*/
+function SumofDigits(n) {
+  var digit;
+  let total = 0;
+  while (n > 0) {
+    digit = n % 10;
+    total += digit;
+    n = Math.floor(n / 10);
+  }
+  return total;
+}
