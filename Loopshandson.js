@@ -127,3 +127,21 @@ function printPattern(n) {
 }
 
 printPattern(n);
+
+/*Prime Numbers Range*/
+let n = parseInt(input);
+
+for (let num = 2; num <= n; num++) {
+  let isPrime = true;
+
+  for (let i = 2; i * i <= num; i++) {
+    if (num % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+
+  if (isPrime) {
+    console.log(num);
+  }
+}
