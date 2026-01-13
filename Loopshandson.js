@@ -145,3 +145,15 @@ for (let num = 2; num <= n; num++) {
     console.log(num);
   }
 }
+
+/*Right Angle Triangle Stars 
+Input:3
+Output:
+*
+**
+***
+
+*/
+for (i = 1; i <= n; i++) {
+  console.log("*".repeat(i));
+}
