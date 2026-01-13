@@ -102,3 +102,28 @@ for (let i = 1; i <= n; i++) {
 }
 
 //-->n = input
+
+/*Ques:Print Continuous Character Pattern\
+Input
+5
+Output
+A
+BC
+CDE
+DEFG
+EFGHI
+*/
+function printPattern(n) {
+  let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 0; j < i; j++) {
+      let char = alphabet[(i - 1 + j) % 26];
+      row += char;
+    }
+    console.log(row);
+  }
+}
+
+printPattern(n);
