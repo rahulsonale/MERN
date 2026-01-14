@@ -157,3 +157,21 @@ Output:
 for (i = 1; i <= n; i++) {
   console.log("*".repeat(i));
 }
+
+/*Descending Number Pattern
+Input:5
+output:
+1
+21
+321
+4321
+54321
+where input is number you can choose*/
+
+for (let i = 1; i <= input; i++) {
+  let row = "";
+  for (let j = i; j >= 1; j--) {
+    row += j;
+  }
+  console.log(row);
+}
