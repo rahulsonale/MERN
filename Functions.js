@@ -49,3 +49,19 @@ function determineSecondLastDigit(n) {
   if (str.length < 2) return false;
   return str[str.length - 2] === "0";
 }
+
+/*Digit Frequency Counter
+Given a number N and a digit D. Write a program to find how many times the digit D appears in the number N.
+*/
+
+function countFreqDigit(n, d) {
+  let str_n = n.toString();
+  let str_d = d.toString();
+  let count = 0;
+  for (let i = 0; i < str_n.length; i++) {
+    if (str_n[i] === str_d) {
+      count++;
+    }
+  }
+  return count;
+}
