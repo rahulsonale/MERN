@@ -42,3 +42,10 @@ function frequencyOfDigit(n, d) {
   }
   return count;
 }
+
+/*Second Last Digit Zero Checker*/
+function determineSecondLastDigit(n) {
+  let str = n.toString();
+  if (str.length < 2) return false;
+  return str[str.length - 2] === "0";
+}
