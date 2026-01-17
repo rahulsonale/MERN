@@ -13,3 +13,14 @@ function ArrayProblem(arr, k) {
   }
   return count;
 }
+
+/*Count Numbers Greater Than 35*/
+function ArrayProblem2(n, arr) {
+  let count = 0;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] > 35) {
+      count++;
+    }
+  }
+  return count;
+}
