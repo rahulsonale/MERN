@@ -24,3 +24,17 @@ function ArrayProblem2(n, arr) {
   }
   return count;
 }
+
+/*Array Sum, Average and Maximum*/
+
+function arrayOperations(arr, n) {
+  let sum = 0;
+
+  for (let i = 0; i < n; i++) {
+    let add = arr[i];
+    sum += add;
+  }
+  let avg = Math.floor(sum / n);
+  let max_element = Math.max(...arr);
+  console.log(sum, avg, max_element);
+}
