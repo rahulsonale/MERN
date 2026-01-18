@@ -1,0 +1,13 @@
+body {
+  height: 2000px; /* just to test scroll */
+}
+
+#box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute; /* REQUIRED */
+  top: 100px;
+  left: 100px;
+  cursor: grab;
+}
