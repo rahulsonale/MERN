@@ -1,0 +1,61 @@
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Mumbai_Skyline_at_Night.jpg/1024px-Mumbai_Skyline_at_Night.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(216, 195, 216);
+  color: rgb(17, 2, 2);
+  padding: 20px;
+  font-size: 20px;
+  height: 20px;
+}
+.menu {
+  display: flex;
+  gap: 40px;
+}
+.qtrip {
+  margin-right: 1500px;
+}
+.main-body {
+  height: 600px;
+}
+.welcome {
+  margin-left: 650px;
+  margin-top: 300px;
+  color: white;
+  font-family: Georgia;
+  font-size: 50px;
+}
+.explore {
+  color: white;
+  margin-left: 480px;
+  font-family: "Arial";
+  font-size: 30px;
+}
+.search-bar {
+  width: 1300px;
+  height: 40px;
+  margin-left: 250px;
+  border-radius: 10px;
+}
+.image-container {
+  display: flex;
+  gap: 10px;
+  margin-left: 300px;
+}
+.box {
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  justify-content: center;
+  border-radius: 10px;
+}
+.box1 {
+  background-image: url("premium_photo-1680836316227-ef17dbbcfb27.avif");
+}
