@@ -38,3 +38,16 @@ function arrayOperations(arr, n) {
   let max_element = Math.max(...arr);
   console.log(sum, avg, max_element);
 }
+
+/*Maximum difference between two elements in an Array*/
+function ArrayProblem(arr) {
+  let min_ele = arr[0];
+  let max_ele = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min_ele) min_ele = arr[i];
+    if (arr[i] > max_ele) max_ele = arr[i];
+  }
+
+  console.log(max_ele - min_ele);
+}
