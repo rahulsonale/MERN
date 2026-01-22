@@ -51,3 +51,30 @@ function ArrayProblem(arr) {
 
   console.log(max_ele - min_ele);
 }
+
+/*Comparing Array Sums
+Input
+2
+1 2
+2
+3 4
+
+Output:Second array is larger*/
+function arrayProblem(arrA, arrB) {
+  let sum_1 = 0;
+  for (let i = 0; i < arrA.length; i++) {
+    sum_1 += arrA[i];
+  }
+  let sum_2 = 0;
+  for (let j = 0; j < arrB.length; j++) {
+    sum_2 += arrB[j];
+  }
+
+  if (sum_1 === sum_2) {
+    return "Both are equal";
+  } else if (sum_1 > sum_2) {
+    return "First array is larger";
+  } else if (sum_2 > sum_1) {
+    return "Second array is larger";
+  }
+}
