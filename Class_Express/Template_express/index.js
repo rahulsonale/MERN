@@ -21,9 +21,12 @@ app.get("/randomnumber", (req, res) => {
 });
 
 app.get("/ig/:username", (req, res) => {
-  const followers = ["james", "aron", "shrey", "Elton"];
   let { username } = req.params;
-  res.render("instagram.ejs", { username, followers });
+  const instadata = require("./data.json");
+  const data = instadata[username];
+  console.log(data);
+
+  res.render("instagram.ejs", { data });
 });
 
 app.listen(port, () => {
