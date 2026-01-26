@@ -106,3 +106,25 @@ function Pairs(arr, k) {
   }
   return count++;
 }
+
+/*Plus Minus:Given an array arr of N integers, Calculate the ratios of its elements that are positive, negative, and zero to the array size N.
+Print the decimal value of each fraction in a new line up to 6 decimal places
+*/
+function printRatios(arr) {
+  let count_p = 0;
+  let count_n = 0;
+  let count_z = 0;
+  let n = arr.length;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] < 0) {
+      count_n++;
+    } else if (arr[i] > 0) {
+      count_p++;
+    } else if (arr[i] === 0) {
+      count_z++;
+    }
+  }
+  console.log((count_p / n).toFixed(6));
+  console.log((count_n / n).toFixed(6));
+  console.log((count_z / n).toFixed(6));
+}
