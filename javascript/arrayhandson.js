@@ -128,3 +128,14 @@ function printRatios(arr) {
   console.log((count_n / n).toFixed(6));
   console.log((count_z / n).toFixed(6));
 }
+
+/*Find Index of Largest Number in Array*/
+function ArrayProblem1(n, arr) {
+  let max_element = arr[0];
+  for (let i = 1; i < n; i++) {
+    if (arr[i] > max_element) {
+      max_element = arr[i];
+    }
+  }
+  return arr.indexOf(max_element);
+}
