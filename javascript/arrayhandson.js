@@ -78,3 +78,18 @@ function arrayProblem(arrA, arrB) {
     return "Second array is larger";
   }
 }
+
+/*Index of Element:You are given an integer array Arr of size N and a number X. You need to print all the indexes of the given X in the array, else print -1.*/
+function indexOfElement(N, X, arr) {
+  let result = [];
+  for (let i = 0; i < N; i++) {
+    if (arr[i] === X) {
+      result.push(i + 1);
+    }
+  }
+  if (result.length === 0) {
+    console.log(-1);
+  } else {
+    console.log(result.join(" "));
+  }
+}
