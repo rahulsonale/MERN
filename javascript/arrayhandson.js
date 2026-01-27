@@ -173,3 +173,20 @@ function minEvenDistance(arr, n) {
 
   return minDist;
 }
+
+/*2nd Largest from array:Given an unsorted array of size N with distinct elements. Find the 2nd largest element from the array without sorting the array.*/
+function SecondLargest(arr, n) {
+  let max = arr[0];
+  for (let i = 1; i < n; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  let second_largest = -1;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] !== max && arr[i] > second_largest) {
+      second_largest = arr[i];
+    }
+  }
+  console.log(second_largest);
+}
