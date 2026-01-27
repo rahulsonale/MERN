@@ -153,3 +153,23 @@ function findIndex(key, arr) {
   }
   console.log(last_index);
 }
+
+/*Minimum Distance Between Even Numbers*/
+function minEvenDistance(arr, n) {
+  let indices = [];
+
+  for (let i = 0; i < n; i++) {
+    if (arr[i] > 0 && arr[i] % 2 === 0) {
+      indices.push(i);
+    }
+  }
+
+  if (indices.length < 2) return -1;
+
+  let minDist = Infinity;
+  for (let i = 1; i < indices.length; i++) {
+    minDist = Math.min(minDist, indices[i] - indices[i - 1]);
+  }
+
+  return minDist;
+}
