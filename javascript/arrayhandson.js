@@ -139,3 +139,17 @@ function ArrayProblem1(n, arr) {
   }
   return arr.indexOf(max_element);
 }
+
+/*Last occurrence in unsorted array:Given an unsorted integer array of size n. Find the last occurrence of a given key.
+
+The key is always present in the array.*/
+
+function findIndex(key, arr) {
+  let last_index = -1;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === key) {
+      last_index = i;
+    }
+  }
+  console.log(last_index);
+}
