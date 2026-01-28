@@ -209,3 +209,14 @@ function LargestElement(nums, n) {
 
   return nums.indexOf(max);
 }
+
+/*Array Reversal*/
+function reverseArray(arr, start, end) {
+  while (start < end) {
+    let temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start++;
+    end--;
+  }
+}
