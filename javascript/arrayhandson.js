@@ -220,3 +220,17 @@ function reverseArray(arr, start, end) {
     end--;
   }
 }
+
+/*Sum of Array Except Self*/
+function sumArrayExceptSelf(nums, n) {
+  let result = [];
+  for (let i = 0; i < n; i++) {
+    let sum = 0;
+    for (let j = 0; j < n; j++) {
+      sum += nums[j];
+    }
+    let ans = sum - nums[i];
+    result.push(ans);
+  }
+  return result;
+}
