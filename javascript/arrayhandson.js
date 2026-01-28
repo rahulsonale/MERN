@@ -190,3 +190,22 @@ function SecondLargest(arr, n) {
   }
   console.log(second_largest);
 }
+
+/*Index of Dominant Element:You are given an integer array nums of size n where the largest integer is unique. Your task is to determine whether the largest element in the array is at least twice as much as every other number in the array. If it is, print the index of the largest element, or print -1 otherwise.*/
+function LargestElement(nums, n) {
+  let max = nums[0];
+  for (let i = 1; i < n; i++) {
+    if (nums[i] > max) {
+      max = nums[i];
+    }
+  }
+
+  for (let i = 0; i < n; i++) {
+    if (nums[i] === max) continue;
+    if (2 * nums[i] > max) {
+      return -1;
+    }
+  }
+
+  return nums.indexOf(max);
+}
