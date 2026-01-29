@@ -247,3 +247,16 @@ function facingSun(n, arr) {
   }
   return count;
 }
+
+/*A Contest*/
+function printFindParticipants(arr, n, k) {
+  let count = 0;
+  let cutoff = arr[k - 1];
+
+  for (let i = 0; i < n; i++) {
+    if (arr[i] >= cutoff && arr[i] > 0) {
+      count++;
+    }
+  }
+  console.log(count);
+}
