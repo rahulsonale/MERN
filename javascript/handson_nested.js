@@ -180,3 +180,21 @@ function rev_column(arr) {
   let n = arr[i].length;
   for (let i = 0; i < n; i++) {}
 }
+
+/*Subarray sum divisible by k*/
+function subarrayDivisbleByK(arr, n, k) {
+  let count = 0;
+  for (let i = 0; i < n; i++) {
+    let subarr = [];
+    let sum = 0;
+
+    for (let j = i; j < n; j++) {
+      subarr.push(arr[j]);
+      sum += arr[j];
+      if (sum % k === 0) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
