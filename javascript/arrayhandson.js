@@ -234,3 +234,16 @@ function sumArrayExceptSelf(nums, n) {
   }
   return result;
 }
+
+/*Sunrise View from Buildings:Given an array h representing heights of buildings. You have to count the buildings which will see the sunrise (Assume : Sun rise on the side of array starting point).*/
+function facingSun(n, arr) {
+  let max = arr[0];
+  let count = 1;
+  for (let i = 1; i < n; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+      count++;
+    }
+  }
+  return count;
+}
