@@ -224,3 +224,31 @@ function checkprime(n) {
   }
 }
 checkprime(13);
+
+//Diamond pattern
+let n = 5;
+let mid = Math.ceil(n / 2);
+
+for (let i = 1; i <= mid; i++) {
+  let row = "";
+  for (let j = 1; j <= mid - i; j++) {
+    row += "  ";
+  }
+  for (let k = 1; k <= 2 * i - 1; k++) {
+    row += "* ";
+  }
+  console.log(row);
+}
+for (let i = mid - 1; i >= 1; i--) {
+  let row = "";
+
+  for (let j = 1; j <= mid - i; j++) {
+    row += "  ";
+  }
+
+  for (let k = 1; k <= 2 * i - 1; k++) {
+    row += "* ";
+  }
+
+  console.log(row);
+}
