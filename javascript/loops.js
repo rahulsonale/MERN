@@ -191,3 +191,19 @@ for (let i = 1; i <= star - 1; i++) {
   }
   console.log(row);
 }
+
+/*ABC..,. pattern*/
+
+function Alphapattern(n) {
+  let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 0; j < i; j++) {
+      let char = alphabet[(i - 1 + j) % 26];
+      row += char;
+    }
+    console.log(row);
+  }
+}
+
+Alphapattern(7);
