@@ -162,10 +162,32 @@
 // }
 // }
 
-for (let i = 1; i <= 10; i++) {
+// for (let i = 1; i <= 10; i++) {
+//   let row = "";
+//   for (j = i; j <= 1; j--) {
+//     row += j;
+//   }
+//   console.log(row);
+// }
+
+let star = 5;
+for (let i = 1; i <= star; i++) {
   let row = "";
-  for (j = i; j <= 1; j--) {
-    row += j;
+  for (let j = 1; j <= star - i; j++) {
+    row += " ";
+  }
+  for (let k = 1; k <= i; k++) {
+    row += "* ";
+  }
+  console.log(row);
+}
+for (let i = 1; i <= star - 1; i++) {
+  let row = "";
+  for (let j = 1; j <= i; j++) {
+    row += " ";
+  }
+  for (let k = 1; k <= star - i; k++) {
+    row += "* ";
   }
   console.log(row);
 }

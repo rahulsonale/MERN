@@ -1,7 +1,7 @@
 /*Sum of Even Numbers*/
 let sum = 0;
 var ans;
-for (i = 1; i <= n; i++) {
+for (i = 1; i <= star; i++) {
   if (i % 2 === 0) {
     sum = sum + i;
     ans = sum;
@@ -11,11 +11,11 @@ console.log(ans);
 
 /*Palindrome Number Checker*/
 let reverse = 0;
-let original = Number(n);
-while (n > 0) {
-  let rev = n % 10;
+let original = Number(star);
+while (star > 0) {
+  let rev = star % 10;
   reverse = reverse * 10 + rev;
-  n = Math.floor(n / 10);
+  star = Math.floor(star / 10);
 }
 
 if (reverse === original) {
@@ -36,12 +36,12 @@ output:
 ----------
 */
 let row = "";
-for (let i = 1; i <= n; i++) {
+for (let i = 1; i <= star; i++) {
   row += "* ";
 }
 console.log(row);
 
-for (let j = 1; j <= n; j++) {
+for (let j = 1; j <= star; j++) {
   console.log("*");
 }
 
@@ -90,9 +90,9 @@ Pattern Image
 * * *
 
 */
-for (let i = 1; i <= n; i++) {
+for (let i = 1; i <= star; i++) {
   let row = "";
-  for (let j = 1; j <= n - i; j++) {
+  for (let j = 1; j <= star - i; j++) {
     row += " ";
   }
   for (let k = 1; k <= i; k++) {
@@ -126,12 +126,12 @@ function printPattern(n) {
   }
 }
 
-printPattern(n);
+printPattern(star);
 
 /*Prime Numbers Range*/
-let n = parseInt(input);
+let star = parseInt(input);
 
-for (let num = 2; num <= n; num++) {
+for (let num = 2; num <= star; num++) {
   let isPrime = true;
 
   for (let i = 2; i * i <= num; i++) {
@@ -154,7 +154,7 @@ Output:
 ***
 
 */
-for (i = 1; i <= n; i++) {
+for (i = 1; i <= star; i++) {
   console.log("*".repeat(i));
 }
 
@@ -177,11 +177,31 @@ for (let i = 1; i <= input; i++) {
 }
 
 /*Alphabet Pattern Printing*/
-for (let i = 1; i <= n; i++) {
+for (let i = 1; i <= star; i++) {
   let char = String.fromCharCode(64 + i);
   let row = "";
   for (let j = 1; j <= i; j++) {
     row += char;
   }
   console.log(row.trim());
+}
+
+/*
+      *
+    *   *
+  *   *   *
+*   *   *   *
+
+for n = 4 
+*/
+let star = 4;
+for (let i = 1; i <= star; i++) {
+  let row = "";
+  for (let j = 1; j <= star - i; j++) {
+    row += " ";
+  }
+  for (let k = 1; k <= i; k++) {
+    row += "* ";
+  }
+  console.log(row);
 }
