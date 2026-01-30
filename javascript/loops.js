@@ -207,3 +207,20 @@ function Alphapattern(n) {
 }
 
 Alphapattern(7);
+
+//Checking prime number upto n
+function checkprime(n) {
+  for (let num = 2; num <= n; num++) {
+    isprime = true;
+    for (let i = 2; i * i <= num; i++) {
+      if (num % i === 0) {
+        isprime = false;
+        break;
+      }
+    }
+    if (isprime) {
+      console.log(num);
+    }
+  }
+}
+checkprime(13);
