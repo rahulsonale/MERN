@@ -272,3 +272,8 @@ for (let i = 1; i <= n; i++) {
 
   console.log(row);
 }
+
+//Right Angle Triangle Stars
+for (i = 1; i <= n; i++) {
+  console.log("*".repeat(i));
+}
