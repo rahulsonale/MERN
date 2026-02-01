@@ -39,8 +39,23 @@ function loadFormDataFromStorage() {
   return formData;
 }
 
+function preFillFormData(savedData, form) {
+  if (savedData) {
+    let { firstName, lastName, gender } = savedData;
+    let firstNameInput = document.querySelector("#firstName");
+    firstNameInput.value = firstName;
+    let LastNameInput = document.querySelector("#lastName");
+    LastNameInput.value = lastName;
+    let genderInput = document.querySelector("#gender");
+    genderInput.value = gender;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   let form = document.querySelector("#user-info");
+
+  let savedData = loadFormDataFromStorage();
+  preFillFormData(savedData, form);
   form.addEventListener("input", function () {
     let formData = new FormData(this);
     let firstName = formData.get("firstName");
