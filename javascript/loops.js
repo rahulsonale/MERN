@@ -192,7 +192,7 @@ for (let i = 1; i <= star - 1; i++) {
   console.log(row);
 }
 
-/*ABC..,. pattern*/
+/*ABC... pattern*/
 
 function Alphapattern(n) {
   let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
