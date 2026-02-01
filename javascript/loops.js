@@ -297,3 +297,18 @@ for (let i = 1; i <= n; i++) {
   }
   console.log(row.trim()); // remove trailing space
 }
+
+//Armstrong Numbers in Range
+let digits = str.length;
+let sum = 0;
+
+// calculate sum of digits^digits
+for (let i = 0; i < str.length; i++) {
+  let digit = Number(str[i]);
+  sum += Math.pow(digit, digits);
+}
+
+// check Armstrong condition
+if (sum === num) {
+  console.log(num);
+}
