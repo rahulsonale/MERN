@@ -1,38 +1,43 @@
-//Object Literals syntax
+// object literal syntax
 
 let person = {
   name: "Gaurav",
   age: 30,
 };
 
-//JSON Format
-// JSON.parse('{"name":"Rahul","age":22,"city":"Pune"}')
-// {name: 'Rahul', age: 22, city: 'Pune'} --> Output
+JSON;
 
-//JSON.parse converts json data in object format
-//Now we can access the propertie of it .
+Number("29");
+parseInt("29");
 
-//JSON.stringyfy --> converts it again back to original JSON format
+// '{"name":"Gaurav","age":30}'
 
-/*Local Storage : It is the data which is stored in the browser for a particular URL, the data is permanent,*/
-//Data is removed when the browser data is cleared or if it is programatically remove item or clear method.
+JSON.parse('{"name":"gaurav","age":29}');
 
-localStorage.setItem("theme", "dark"); // to set in localstorage
-localStorage.getItem("theme"); // to retreive from localstorage
-localStorage.removeItem("theme"); //to remove from localstorage
+// localStorage
 
-//storing multiple values in localstorage
-localStorage.setItem("name", "Shanaya");
-localStorage.setItem("Age", 21);
-localStorage.setItem("City", "Mumbai");
+// it is data which is stored in the browser for a particular url
+// the data is permanent.
+// data is only removed when the browser data is cleared or
+// if it is programatically removed using remove item or clear methods
 
-//removes all items from localstorage
-//localStorage.clear();
+// to set in storage
+localStorage.setItem("theme", "dark");
+// to retreive from storage
+localStorage.getItem("theme");
 
+// to remove from local storage
+localStorage.removeItem("theme");
+
+localStorage.setItem("username", "john");
+localStorage.setItem("password", "122434");
+
+// clears all items from local storage
+// localStorage.clear();
 const FORM_DATA = "user-info";
-
 function loadFormDataFromStorage() {
   let formData = localStorage.getItem(FORM_DATA);
+
   if (formData) {
     formData = JSON.parse(formData);
   }
@@ -44,31 +49,46 @@ function preFillFormData(savedData, form) {
     let { firstName, lastName, gender } = savedData;
     let firstNameInput = document.querySelector("#firstName");
     firstNameInput.value = firstName;
-    let LastNameInput = document.querySelector("#lastName");
-    LastNameInput.value = lastName;
+    let lastNameInput = document.querySelector("#lastName");
+    lastNameInput.value = lastName;
+
     let genderInput = document.querySelector("#gender");
     genderInput.value = gender;
   }
-}
 
+  // document.querySelector("#firstName").value = firstName;
+}
 document.addEventListener("DOMContentLoaded", function () {
   let form = document.querySelector("#user-info");
 
   let savedData = loadFormDataFromStorage();
   preFillFormData(savedData, form);
+
   form.addEventListener("input", function () {
     let formData = new FormData(this);
     let firstName = formData.get("firstName");
     let lastName = formData.get("lastName");
     let gender = formData.get("gender");
-    //console.log({ firstName, lastName, gender });
     console.log();
-
     localStorage.setItem(
-      "user-info",
+      FORM_DATA,
       JSON.stringify({ firstName, lastName, gender }),
     );
+  });
 
-    form.addEventListener("submit", function () {});
+  form.addEventListener("submit", function () {});
+  // storage event is triggered when storage(local/session) is updated in another tab
+  // here we are syncing the data for all the other open tabs
+  window.addEventListener("storage", (event) => {
+    if (event.key === FORM_DATA) {
+      let { firstName, lastName, gender } = JSON.parse(event.newValue);
+      let firstNameInput = document.querySelector("#firstName");
+      firstNameInput.value = firstName;
+      let lastNameInput = document.querySelector("#lastName");
+      lastNameInput.value = lastName;
+
+      let genderInput = document.querySelector("#gender");
+      genderInput.value = gender;
+    }
   });
 });
