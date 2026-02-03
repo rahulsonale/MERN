@@ -46,7 +46,7 @@ const array3 = [
 console.log(array1[1][1]);
 console.log(
   "checking if array1 is an array or not using Array.isArray() method",
-  Array.isArray(array1)
+  Array.isArray(array1),
 );
 
 if (Array.isArray(array1[4])) {
@@ -121,7 +121,6 @@ const array4 = [
 ];
 reverseRows(array4);
 
-
 /* H.W -> Reverse columns of a 2D matrix
  
 input: [
@@ -145,4 +144,12 @@ actual array after reversing the colums will be
 ]
 */
 
-
+//rotate 90 degree
+let n = matrix.length;
+for (let j = 0; j < n; j++) {
+  let result = [];
+  for (let i = matrix.length - 1; i >= 0; i--) {
+    result.push(matrix[i][j]);
+  }
+  console.log(result);
+}
