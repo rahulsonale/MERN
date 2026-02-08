@@ -2,12 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Drag Box</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Events & Interactions</title>
+    <style>
+      .box {
+        border: 1px solid;
+        background-color: violet;
+        height: 100px;
+        width: 100px;
+        margin: 16px;
+        position: relative;
+      }
+
+      .draggable {
+        opacity: 0.5;
+        cursor: grab;
+      }
+    </style>
   </head>
   <body>
-    <div id="box"></div>
+    <input id="name" type="text" />
 
+    <div class="box"></div>
+    <!-- <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div> -->
     <script src="main.js"></script>
   </body>
 </html>

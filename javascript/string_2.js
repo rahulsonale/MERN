@@ -86,7 +86,7 @@ str = "   How_are_you_in Jungle!  ";
 console.log(
   str
     .trim()
-    .substring(str.trim().indexOf("Jungle"), str.trim().indexOf("Jungle") + 6)
+    .substring(str.trim().indexOf("Jungle"), str.trim().indexOf("Jungle") + 6),
 );
 
 console.log(str.trim().split(" ")[1].split("!")[0]);
@@ -100,7 +100,7 @@ Note: Spain should remain as is
 */
 str = "Hi are you in Spain, which city are you in? How's your pain?";
 console.log(
-  str.replace("Spain", "X").replaceAll("in", "on").replace("X", "Spain")
+  str.replace("Spain", "X").replaceAll("in", "on").replace("X", "Spain"),
 );
 
 /* function to reverse a string */
@@ -137,7 +137,7 @@ console.log(isPalindrome("abcba"));
 str = "Nurses Run";
 console.log(
   `checking if "${str}" is palindrome or not (ignoring cases & spaces)`,
-  isPalindrome(str.toLowerCase().replaceAll(" ", ""))
+  isPalindrome(str.toLowerCase().replaceAll(" ", "")),
 );
 
 /* H.W --> find the length of longest word
@@ -169,11 +169,11 @@ function firstNonRepeatingChar(str) {
 
 console.log(
   "first non repeating character in 'stringMethodsring' is :",
-  firstNonRepeatingChar("stringMethodsring")
+  firstNonRepeatingChar("stringMethodsring"),
 );
 console.log(
   "first non repeating character in 'aaabbbb' is :",
-  firstNonRepeatingChar("aaabbbb")
+  firstNonRepeatingChar("aaabbbb"),
 );
 
 /* write a function to count the frequency of each character */
@@ -209,4 +209,4 @@ abd: 3
 ghj: 2
 ghi: 1
 abc: 1
- 
+ */
