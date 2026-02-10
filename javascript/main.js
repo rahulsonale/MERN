@@ -47,16 +47,29 @@ const products = [
 //   }
 // }
 
-console.log(
-  products
-    .filter((p) => p.rating >= 4.2)
-    .map((p) => {
-      return {
-        name: p.name,
-        rating: p.rating,
-      };
-    }),
-);
+// console.log(
+//   products
+//     .filter((p) => p.rating >= 4.2)
+//     .map((p) => {
+//       return {
+//         name: p.name,
+//         rating: p.rating,
+//       };
+//     }),
+// );
+
+let names = products
+  .filter((p) => {
+    return p.rating >= 4.2;
+  })
+  .map((n) => {
+    return {
+      name: n.name,
+      rating: n.rating,
+    };
+  });
+
+console.log(names);
 
 // let arr = [1, 2, 3, 4, 5];
 // console.log(arr.filter((n) => n > 3));
