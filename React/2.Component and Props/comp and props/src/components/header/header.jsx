@@ -1,5 +1,5 @@
-import "./Header.css";
-export default function Header() {
+import "./header.css";
+function Head() {
   return (
     <header id="header">
       <nav>
@@ -11,3 +11,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Head;
