@@ -2,6 +2,7 @@ import "./App.css";
 import Box from "./components/box/box";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
+import Counter from "./Counter";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           style={{ backgroundColor: "yellow" }}
           children={"Box 3"}
         />
+        <Counter />
       </section>
       <Footer />
     </>
