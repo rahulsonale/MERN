@@ -8,14 +8,23 @@ const connection = mysql.createConnection({
   database: "Delta_App",
 });
 
+//Inserting New Data
+let q = "INSERT INTO user(id ,username ,email,password) VALUES ?";
+let users = [
+  ["123b", "123b_username", "abcb@gmail.com", "abcb"],
+  ["123c", "123c_username", "abcc@gmail.com", "abcc"],
+];
+
 try {
-  connection.query("SHOW TABLES", (error, result) => {
+  connection.query(q, [users], (error, result) => {
     if (error) throw error;
     console.log(result);
   });
 } catch (error) {
   console.log(error);
 }
+
+connection.end();
 
 let getRandomUser = () => {
   return {
