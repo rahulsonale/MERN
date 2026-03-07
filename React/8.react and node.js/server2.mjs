@@ -81,8 +81,19 @@ const server = createServer((req, res) => {
     res.end(JSON.stringify(users));
   } else if (url === "/user" && method.toLowerCase() === "post") {
     console.log(url, req.body);
+    const body = [];
+    req.on("data", (chunk) => {
+      body.push(chunk);
+    });
+    req.on("end", () => {
+      console.log(nody.toString());
+      res.statusCode = 201;
+      res.setHeader("Content-Type", "application/json");
+      res.end(body.toString());
+    });
     console.log("post called");
     res.statusCode = 201;
+    res.setHeader("Content-type", "text/plain");
 
     res.end(crypto.randomUUID());
   } else if (url === "/") {
