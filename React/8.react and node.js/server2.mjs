@@ -1,10 +1,7 @@
 import { createServer } from "node:http";
-import test from "node:test";
-
 const server = createServer((req, res) => {
   const { url, method } = req;
-
-  if (url === "/user" && method.toLowerCase() === "get") {
+  if (url.includes("/user") && method.toLowerCase() === "get") {
     const users = [
       {
         id: 1,
@@ -76,46 +73,64 @@ const server = createServer((req, res) => {
         },
       },
     ];
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify(users));
+
+    const urlReq = new URL(`http://${req.headers.host}/${url}`);
+    const name = urlReq.searchParams.get("name");
+    try {
+      const userId = parseInt(urlReq.pathname.split("/")?.at(-1));
+      let result = users;
+      if (userId) {
+        result = users.find((user) => user.id == userId);
+      }
+      if (name) {
+        result = users.find((user) => user.name.includes(name));
+      }
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.end(JSON.stringify(result));
+    } catch (ex) {
+      res.statusCode = 500;
+      console.log(ex);
+      res.end(JSON.stringify({ error: "Error while processing request" }));
+    }
   } else if (url === "/user" && method.toLowerCase() === "post") {
     console.log(url, req.body);
     const body = [];
+    // Chunk1 → { "na
+    //     Chunk2 → me": "
+    //     Chunk3 → gaurav" }
     req.on("data", (chunk) => {
       body.push(chunk);
     });
+
     req.on("end", () => {
-      console.log(nody.toString());
+      console.log(body.toString());
       res.statusCode = 201;
       res.setHeader("Content-Type", "application/json");
       res.end(body.toString());
     });
     console.log("post called");
-    res.statusCode = 201;
-    res.setHeader("Content-type", "text/plain");
-
-    res.end(crypto.randomUUID());
   } else if (url === "/") {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/html");
     res.end(`
-            <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nodejs Intro</title>
-  </head>
-  <body>
-    <h1>Welcome!</h1>
-    <p>This is coming from server</p>
+            < !doctype html >
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Nodejs Intro</title>
+            </head>
+            <body>
+                <h1>Welcome!</h1>
+                <p>This is coming from server</p>
 
-  </body>
-</html>
+            </body>
+        </html>
 
             `);
   }
 });
-
 server.listen(3001, "127.0.0.1", () => {
-  console.log("Server is running on  127.0.0.1:3001");
+  console.log("Server is running on 127.0.0.1:3001");
 });
