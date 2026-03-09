@@ -5,5 +5,3 @@ CREATE TABLE user(
     password VARCHAR(50) NOT NULL
 );
 
-
-
