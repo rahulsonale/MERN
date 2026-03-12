@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodoverride = require("method-override");
+const { send } = require("process");
 
 app.use(methodoverride("_method"));
 app.use(express.urlencoded({ extended: true }));
@@ -79,7 +80,29 @@ app.get("/user/:id/edit", (req, res) => {
   }
 });
 
-//Update router
-app.get("/user/:id", (req, res) => {
-  res.send("Updated");
+//Update router PATCH
+app.patch("/user/:id", (req, res) => {
+  let { id } = req.params;
+  let { password: formpass, username: newusername } = req.body;
+  let q = `SELECT * FROM USER WHERE id = '${id}'`;
+  try {
+    connection.query(q, (error, result) => {
+      if (error) throw error;
+      let user = result[0];
+      if (formpass != user.password) {
+        res.send("Wrong Password");
+      } else {
+        let q2 = `UPDATE user SET username=${newusername} WHERE id = '${id}'`;
+        connection.query(q2, (err, result) => {
+          if (err) throw err;
+          res.send(result);
+        });
+      }
+      res.send(user);
+      //res.send(result);
+    });
+  } catch (error) {
+    console.log(error);
+    res.send("Some error occured");
+  }
 });
